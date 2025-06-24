@@ -1,0 +1,7 @@
+.env
+__pycache__
+*.pyc
+*.pyo
+.gradio
+Pipfile.lock
+Pipfile.lock
