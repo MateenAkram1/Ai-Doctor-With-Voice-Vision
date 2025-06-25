@@ -20,7 +20,7 @@ def process_inputs(audio_filepath, image_filepath):
                                                  audio_file=audio_filepath,
                                                  stt_model="whisper-large-v3")
 
-    # Handle the image input
+    
     if image_filepath:
         doctor_response = analyze_image_withquery(query=system_prompt+speech_to_text_output, encoded_image=encode_image(image_filepath), model="meta-llama/llama-4-scout-17b-16e-instruct")
     else:
@@ -31,7 +31,7 @@ def process_inputs(audio_filepath, image_filepath):
     return speech_to_text_output, doctor_response, voice_of_doctor
 
 
-# Create the interface
+
 iface = gr.Interface(
     fn=process_inputs,
     inputs=[
@@ -46,4 +46,4 @@ iface = gr.Interface(
     title="AI Doctor with Vision and Voice"
 )
 
-iface.launch(debug=True)
+iface.launch()
